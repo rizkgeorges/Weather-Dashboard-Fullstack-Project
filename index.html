@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic World Weather Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header and Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">WeatherDash</a>
+      <button class="navbar-toggler" type="button" id="sidebarToggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <div class="mobile-sidebar" id="mobileSidebar">
+    <button class="close-btn" id="closeMobileSidebar">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <!-- End Header and Navigation -->
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Dynamic World Weather Dashboard</h1>
+          <p class="hero-subtitle">Explore real-time weather data from cities around the globe with our interactive dashboard</p>
+          <div class="hero-btn-container">
+            <a href="#" id="viewDashboardBtn" class="btn btn-lg btn-primary hero-btn" data-ripple="true">
+              <span class="btn-text">View Dashboard</span>
+              <span class="btn-icon">🌤️</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-animation">
+          <div class="weather-container">
+            <div class="sun"></div>
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+            <div class="cloud cloud3"></div>
+            <div class="rain"></div>
+            <div class="lightning"></div>
+            <div class="weather-info">
+              <div class="temp">24°C</div>
+              <div class="condition">Partly Cloudy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section -->
+
+  <!-- Dashboard Section -->
+  <main class="container my-5" id="dashboard">
+    <h2 class="mb-4 section-title w-100 text-center d-block">City Weather Dashboard</h2>
+    <div id="weather-loading" class="text-center my-5">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p>Loading weather data...</p>
+    </div>
+    <div id="weather-cards" class="row g-4"></div>
+  </main>
+  <!-- End Weather Dashboard -->
+
+  <!-- Weather Details Modal -->
+  <div class="modal fade" id="weatherModal" tabindex="-1" aria-labelledby="weatherModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="weatherModalLabel">City Weather Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="weatherModalBody">
+          <!-- Dynamic content -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Locations Section (Modern Card Grid) -->
+  <section class="container my-5">
+    <h2 class="mb-4 section-title w-100 text-center d-block">Featured Locations</h2>
+    <p class="lead text-center mb-4">Discover weather highlights from around the world. Click a city to explore its gallery!</p>
+    <div class="row g-4 justify-content-center">
+      <!-- Paris -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a href="gallery.html#paris" class="featured-city-card d-block text-decoration-none">
+          <div class="card city-tile h-100 shadow-lg">
+            <div class="city-img-wrap">
+              <img src="Featured Locations/Paris.jpg" alt="Paris" class="card-img-top">
+              <div class="city-gradient"></div>
+              <span class="city-icon">⛅</span>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">Paris</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- London -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a href="gallery.html#london" class="featured-city-card d-block text-decoration-none">
+          <div class="card city-tile h-100 shadow-lg">
+            <div class="city-img-wrap">
+              <img src="Featured Locations/London.jpg" alt="London" class="card-img-top">
+              <div class="city-gradient"></div>
+              <span class="city-icon">🌧️</span>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">London</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- Beirut -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a href="gallery.html#beirut" class="featured-city-card d-block text-decoration-none">
+          <div class="card city-tile h-100 shadow-lg">
+            <div class="city-img-wrap">
+              <img src="Featured Locations/Beirut.jpg" alt="Beirut" class="card-img-top">
+              <div class="city-gradient"></div>
+              <span class="city-icon">🌤️</span>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">Beirut</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- New York -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a href="gallery.html#newyork" class="featured-city-card d-block text-decoration-none">
+          <div class="card city-tile h-100 shadow-lg">
+            <div class="city-img-wrap">
+              <img src="Featured Locations/New York.jpg" alt="New York" class="card-img-top">
+              <div class="city-gradient"></div>
+              <span class="city-icon">🌆</span>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">New York</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- Tokyo -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a href="gallery.html#tokyo" class="featured-city-card d-block text-decoration-none">
+          <div class="card city-tile h-100 shadow-lg">
+            <div class="city-img-wrap">
+              <img src="gallery/Tokyo.jpg" alt="Tokyo" class="card-img-top">
+              <div class="city-gradient"></div>
+              <span class="city-icon">🌸</span>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">Tokyo</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a href="gallery.html" class="btn btn-outline-primary btn-lg" style="font-weight:600;">
+        <i class="bi bi-images me-2"></i>View Full Gallery
+      </a>
+    </div>
+  </section>
+  <!-- End Featured Locations -->
+
+  <!-- FAQ Section -->
+  <section>
+    <h3 class="mb-3 section-title w-100 text-center d-block">Frequently Asked Questions</h3>
+    <div class="accordion live-faq" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq1">
+          <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1">
+            <span class="faq-arrow me-2"><i class="bi bi-chevron-right"></i></span>
+            How often is the weather data updated?
+          </button>
+        </h2>
+        <div id="faqCollapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Weather data is updated in real-time, every time you load the dashboard.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq2">
+          <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2">
+            <span class="faq-arrow me-2"><i class="bi bi-chevron-right"></i></span>
+            Can I suggest new cities to add?
+          </button>
+        </h2>
+        <div id="faqCollapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes! Please use the contact form to suggest new cities or features.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq3">
+          <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3">
+            <span class="faq-arrow me-2"><i class="bi bi-chevron-right"></i></span>
+            Where do the images come from?
+          </button>
+        </h2>
+        <div id="faqCollapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            All images are sourced from Unsplash and Pexels via their public APIs.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End FAQ Section -->
+
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollTopBtn" class="btn btn-primary scroll-top-btn" title="Go to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer text-center py-3" style="background:#fff; color:#1976d2; border-top:1px solid #e3eaf2;">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-2 mb-md-0" style="font-weight:500;">&copy; 2024 Dynamic World Weather Dashboard</div>
+      <a href="contact.html" class="btn btn-outline-primary btn-sm" style="font-weight:500;">Contact Us</a>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Bootstrap Icons & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Animate FAQ arrows
+    document.querySelectorAll('.live-faq .accordion-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        setTimeout(() => {
+          document.querySelectorAll('.live-faq .accordion-button').forEach(b => {
+            const arrow = b.querySelector('.faq-arrow i');
+            if (b.classList.contains('collapsed')) {
+              arrow.classList.remove('faq-rotated');
+            } else {
+              arrow.classList.add('faq-rotated');
+            }
+          });
+        }, 150);
+      });
+    });
+  });
+  </script>
+</body>
+</html> 

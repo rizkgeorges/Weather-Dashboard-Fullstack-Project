@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Dynamic World Weather Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header and Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">WeatherDash</a>
+      <button class="navbar-toggler" type="button" id="sidebarToggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="about.html">About</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <div class="mobile-sidebar" id="mobileSidebar">
+    <button class="close-btn" id="closeMobileSidebar">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container my-5" style="margin-top: 100px !important; flex: 1; display: flex; flex-direction: column;">
+    <div style="flex: 1;">
+      <h2 class="mb-4 section-title w-100 text-center d-block">Our Story</h2>
+      
+      <!-- Timeline Section -->
+      <section class="timeline mb-5">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h5>2019</h5>
+            <p>WeatherDash was founded with a vision to make weather data accessible and beautiful.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h5>2020</h5>
+            <p>Launched our first dashboard, integrating real-time weather APIs and stunning imagery.</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h5>2022</h5>
+            <p>Expanded to include global coverage and advanced forecasting features.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h5>2024</h5>
+            <p>Introduced the Dynamic World Weather Dashboard, setting new standards in user experience.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="mb-5">
+        <h3 class="mb-4 section-title w-100 text-center d-block">Testimonials</h3>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card testimonial-card">
+              <div class="card-body">
+                <p class="card-text">"Absolutely love the dashboard! It's my go-to for planning trips."</p>
+                <h6 class="card-subtitle text-muted">- Alex T.</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card testimonial-card">
+              <div class="card-body">
+                <p class="card-text">"The UI is gorgeous and the data is always accurate."</p>
+                <h6 class="card-subtitle text-muted">- Priya S.</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card testimonial-card">
+              <div class="card-body">
+                <p class="card-text">"I use WeatherDash every day. The gallery is a nice touch!"</p>
+                <h6 class="card-subtitle text-muted">- Marco L.</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card testimonial-card">
+              <div class="card-body">
+                <p class="card-text">"If you're reading this, it means I finally finished the project! Thank you for all the knowledge, Eng. Elias Zaghrini – you made weather dashboards cooler than a cold front!"</p>
+                <h6 class="card-subtitle text-muted">- Eng. Elias Zaghrini</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <!-- ... remove everything from here until the next section or end of main content ... -->
+    </div>
+  </main>
+
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollTopBtn" class="btn btn-primary scroll-top-btn" title="Go to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer text-center py-3" style="background:#fff; color:#1976d2; border-top:1px solid #e3eaf2; border-radius:0 !important;">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-2 mb-md-0" style="font-weight:500;">&copy; 2024 Dynamic World Weather Dashboard</div>
+      <a href="contact.html" class="btn btn-outline-primary btn-sm" style="font-weight:500;">Contact Us</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Icons & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html> 

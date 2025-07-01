@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Dynamic World Weather Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header and Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">WeatherDash</a>
+      <button class="navbar-toggler" type="button" id="sidebarToggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link active" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <div class="mobile-sidebar" id="mobileSidebar">
+    <button class="close-btn" id="closeMobileSidebar">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="contact-section">
+    <main class="container my-5">
+      <div class="contact-card">
+        <h2 class="mb-4 section-title text-center">Contact Us</h2>
+        <form id="contactForm" class="single-step-form">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName" class="form-label">First Name *</label>
+              <input type="text" class="form-control" id="firstName" required aria-required="true" autocomplete="given-name">
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please enter your first name.</div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName" class="form-label">Last Name *</label>
+              <input type="text" class="form-control" id="lastName" required aria-required="true" autocomplete="family-name">
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please enter your last name.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email *</label>
+              <input type="email" class="form-control" id="email" required aria-required="true" autocomplete="email">
+              <div class="valid-feedback">Valid email!</div>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" pattern="[0-9\-\+\s\(\)]{7,}" autocomplete="tel">
+              <div class="valid-feedback">Valid phone number!</div>
+              <div class="invalid-feedback">Please enter a valid phone number.</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Subject *</label>
+            <select class="form-select" id="subject" required aria-required="true">
+              <option value="" disabled selected>Select a subject</option>
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Feedback">Feedback</option>
+              <option value="Support">Support</option>
+              <option value="Partnership">Partnership</option>
+            </select>
+            <div class="valid-feedback">Subject selected!</div>
+            <div class="invalid-feedback">Please select a subject.</div>
+          </div>
+          <div class="mb-3">
+            <label for="companyName" class="form-label">Company (optional)</label>
+            <input type="text" class="form-control" id="companyName" autocomplete="organization">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Preferred Contact Method *</label>
+            <div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="contactMethod" id="contactEmail" value="Email" checked required>
+                <label class="form-check-label" for="contactEmail">Email</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="contactMethod" id="contactPhone" value="Phone" required>
+                <label class="form-check-label" for="contactPhone">Phone</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="contactMethod" id="contactWhatsApp" value="WhatsApp" required>
+                <label class="form-check-label" for="contactWhatsApp">WhatsApp</label>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="country" class="form-label">Country *</label>
+            <select class="form-select" id="country" required aria-required="true">
+              <option value="" disabled selected>Select your country</option>
+              <option value="USA">USA</option>
+              <option value="UK">UK</option>
+              <option value="France">France</option>
+              <option value="Australia">Australia</option>
+              <option value="Japan">Japan</option>
+              <option value="Brazil">Brazil</option>
+              <option value="Lebanon">Lebanon</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="valid-feedback">Country selected!</div>
+            <div class="invalid-feedback">Please select your country.</div>
+          </div>
+          <div id="subjectExtra" class="mb-3"></div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="newsletter">
+            <label class="form-check-label" for="newsletter">Subscribe to our newsletter</label>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message *</label>
+            <textarea class="form-control" id="message" rows="5" required aria-required="true" autocomplete="off"></textarea>
+            <div class="valid-feedback">Thank you for your message!</div>
+            <div class="invalid-feedback">Please enter your message.</div>
+          </div>
+          <button type="submit" class="btn btn-success">Send</button>
+        </form>
+        <div id="formAlert" class="alert mt-4 d-none" role="alert" aria-live="polite"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollTopBtn" class="btn btn-primary scroll-top-btn" title="Go to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer text-center py-3" style="background:#fff; color:#1976d2; border-top:1px solid #e3eaf2; border-radius:0 !important;">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-2 mb-md-0 w-100 text-center" style="font-weight:500;">&copy; 2024 Dynamic World Weather Dashboard</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Icons & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html> 
