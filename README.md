@@ -3,7 +3,7 @@
 **Author:** Georges Rizk
 
 ## API Used
-- OpenWeatherMap API (or the weather API you integrated)
+- OpenWeatherMap API
 
 ## Project Description
 A modern, responsive weather dashboard web app that displays current weather and 7-day forecasts for featured cities around the world. Includes interactive cards, animated weather icons, a gallery, FAQ, and a contact form. Built with HTML5, CSS3 (Flexbox, transitions), and ES6 JavaScript classes.
